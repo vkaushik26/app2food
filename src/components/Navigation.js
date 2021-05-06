@@ -9,14 +9,17 @@ const Navigation = (props) => {
     const [List, setList] = useState([])
 
     function food() {
-
         FoodService.getAllFoodService().then((Response) => {
-            // this.setState({ inventory: Response.data })
             let cat = Response.data;
             setList(cat.data.categories);
-            console.log(cat.data.categories);
+            // console.log(cat.data.categories);
         })
 
+    }
+
+    function setCategory(event) {
+        // console.log(event.target.value)
+        props.catselected(event);
     }
 
     useEffect(() => {
@@ -26,15 +29,14 @@ const Navigation = (props) => {
     return (
         <div class="sidenav">
             {
-                List.map((categories)=>
-                {
+                List.map((categories) => {
                     return (
-                        <a href="">{categories.category_name}</a>
+                        <div class="container row">
+                            <button className="button btn-primary" value={categories.product} onClick={setCategory}>{categories.category_name}</button>
+                        </div>
                     )
                 })
             }
-
-            
         </div>
 
         // List.map((l) => {
