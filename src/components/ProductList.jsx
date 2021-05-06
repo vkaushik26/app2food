@@ -2,23 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Product from './product';
 
-const ProductList = ({ products }) => {
+function ProductList (props){
+
+
+
     return (
         <div>
             <h3>Products</h3>
             <ul className="product-list">
-              {products.map(product => (
+              {props.productInput.map((product) => (
                   <li key={product.id} className="product-list__item">
-                    <Product {...product} />
+                    <Product dataload={product} />
                   </li>
               ))}
             </ul>
         </div>
     );
-}
-
-ProductList.propTypes = {
-    products: PropTypes.array,
 }
 
 export default ProductList;
