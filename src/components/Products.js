@@ -70,15 +70,12 @@ function Products(props) {
                             {product.product_desc}
                         </p>
                         <div className="product-footer row">
-                            <div className="col col-7 customize-product" >
+                            <div className="col col-6 customize-product" >
                                 <a href="#">Customize</a>
                             </div>
-                            <div className="col col-5" style={{ textAlign: 'right', cursor: 'pointer' }} onClick={() => { addItem(product.store_product_id); }} >
+                            <div className="col col-6" style={{ textAlign: 'right', cursor: 'pointer' }} onClick={() => { addItem(product.store_product_id); }} >
                                 <div className="trapezoid-left"><span> ADD &nbsp;  | </span></div>
                                 <div className="trapezoid"><span>${product.product_price}</span></div>
-
-
-
                             </div>
 
                         </div>
